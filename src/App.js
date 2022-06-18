@@ -1,9 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Expenses from './components/Expenses';
+// import logo from './logo.svg';
+// import './App.css';
+import Expenses from "./components/Expanses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 
-function App() {
+const App = () => {
 
   const expenses = [
     {
@@ -27,8 +28,14 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('In App js');
+    console.log(expense);
+  };
+
   return (
     <div>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items = {expenses}/>
     </div>
   );
